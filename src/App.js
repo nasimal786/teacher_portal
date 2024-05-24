@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import Login from "./components/Login";
+import Home from "./components/Home";
 
-function App() {
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      document.body.style.backgroundColor = "white";
+    } else {
+      document.body.style.backgroundColor = "#f5f5f5";
+    }
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        {isAuthenticated ? <Home /> : <Login onLogin={setIsAuthenticated} />}
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;
