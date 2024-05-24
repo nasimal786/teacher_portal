@@ -3,6 +3,9 @@ import { Container, AppBar, Toolbar, Typography, Button } from "@mui/material";
 import StudentTable from "./StudentTable";
 
 const Home = () => {
+  const handleLogout = () => {
+    window.location.href = "/login";
+  };
   return (
     <Container sx={{ mt: 2, mb: 6, width: "90%" }}>
       <AppBar
@@ -27,7 +30,7 @@ const Home = () => {
           <Button color="inherit" sx={{ mr: 2, fontWeight: "bold" }}>
             Home
           </Button>
-          <Button color="inherit" sx={{ fontWeight: "bold" }}>
+          <Button color="inherit" sx={{ fontWeight: "bold" }} onClick={handleLogout}>
             Logout
           </Button>
         </Toolbar>
