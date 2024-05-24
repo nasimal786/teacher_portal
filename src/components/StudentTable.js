@@ -156,7 +156,9 @@ const StudentTable = () => {
       </TableContainer>
 
       <Dialog open={editOpen} onClose={handleEditClose}>
-        <DialogTitle>Edit Student</DialogTitle>
+        <DialogTitle sx={{ color: "blue", fontWeight: "bold" }}>
+          Edit Student
+        </DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
