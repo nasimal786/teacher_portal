@@ -188,11 +188,16 @@ const StudentTable = () => {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleEditClose} color="secondary">
+          <Button
+            variant="contained"
+            sx={{ backgroundColor: "red" }}
+            onClick={handleEditClose}
+          >
             Cancel
           </Button>
-          <Button onClick={handleEditSave} color="primary">
-            Save
+
+          <Button variant="contained" onClick={handleEditSave}>
+            Update
           </Button>
         </DialogActions>
       </Dialog>
